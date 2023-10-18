@@ -31,7 +31,7 @@ describe("When slider is created", () => {
     window.console.error = jest.fn();
     api.loadData = jest.fn().mockReturnValue(data);
     render(
-      <DataProvider>
+      <DataProvider  value={data}>
         <Slider />
       </DataProvider>
     );

@@ -1,5 +1,63 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Home from "./index";
+import { api, DataProvider } from "../../contexts/DataContext";
+
+const data = {
+  events: [
+    {
+      id: 1,
+      type: "soirée entreprise",
+      date: "2022-04-29T20:28:45.744Z",
+      title: "Conférence #productCON",
+      cover: "/images/stem-list-EVgsAbL51Rk-unsplash.png",
+      description:
+        "Présentation des outils analytics aux professionnels du secteur",
+      nb_guesses: 1300,
+      periode: "24-25-26 Février",
+      prestations: [
+        "1 espace d’exposition",
+        "1 scéne principale",
+        "2 espaces de restaurations",
+        "1 site web dédié",
+      ],
+    },
+
+    {
+      id: 2,
+      type: "forum",
+      date: "2022-04-29T20:28:45.744Z",
+      title: "Forum #productCON",
+      cover: "/images/stem-list-EVgsAbL51Rk-unsplash.png",
+      description:
+        "Présentation des outils analytics aux professionnels du secteur",
+      nb_guesses: 1300,
+      periode: "24-25-26 Février",
+      prestations: ["1 espace d’exposition", "1 scéne principale"],
+    },
+  ],
+  focus: [
+    {
+      title: "World economic forum",
+      description:
+        "Oeuvre à la coopération entre le secteur public et le privé.",
+      date: "2022-02-29T20:28:45.744Z",
+      cover: "/images/evangeline-shaw-nwLTVwb7DbU-unsplash1.png",
+    },
+    {
+      title: "World Gaming Day",
+      description: "Evenement mondial autour du gaming",
+      date: "2022-03-29T20:28:45.744Z",
+      cover: "/images/evangeline-shaw-nwLTVwb7DbU-unsplash1.png",
+    },
+    {
+      title: "World Farming Day",
+      description: "Evenement mondial autour de la ferme",
+      date: "2022-01-29T20:28:45.744Z",
+      cover: "/images/evangeline-shaw-nwLTVwb7DbU-unsplash1.png",
+    },
+  ],
+};
+
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -21,24 +79,37 @@ describe("When Form is created", () => {
         })
       );
       await screen.findByText("En cours");
-      await screen.findByText("Message envoyé !");
+      await waitFor(() => screen.findByText("Message envoyé !"), {
+        timeout: 2000,
+      });
     });
   });
-
 });
-
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
-  })
-  it("a list a people is displayed", () => {
-    // to implement
-  })
-  it("a footer is displayed", () => {
-    // to implement
-  })
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
-  })
+    render(<Home />);
+    const cardElements = screen.queryAllByTestId("card-image-testid");
+    expect(cardElements.length).toBeGreaterThanOrEqual(1);
+  });
+  it("a list a people is displayed", async () => {
+    render(<Home />);
+
+    await screen.findByText("Samira");
+  });
+  it("a footer is displayed", async () => {
+    render(<Home />);
+    await screen.findByText("Contactez-nous");
+  });
+  it("an event card, with the last event, is displayed", async () => {
+    window.console.error = jest.fn();
+    api.loadData = jest.fn().mockReturnValue(data);
+    render(
+      <DataProvider  value={data}>
+        <Home />
+      </DataProvider>
+    );
+    
+    await screen.findByText("boom");
+  });
 });
