@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 import { getMonth } from "../../helpers/Date";
 
+// Url pour git page
+import URL from "../../URL";
+
 import "./style.scss";
 
 const EventCard = ({
@@ -18,7 +21,7 @@ const EventCard = ({
       {...props}
     >
       <div className="EventCard__imageContainer">
-        <img data-testid="card-image-testid" src={imageSrc} alt={imageAlt} />
+        <img data-testid="card-image-testid" src={`${URL}${imageSrc}`} alt={imageAlt} />
         <div className="EventCard__label">{label}</div>
       </div>
       <div className="EventCard__descriptionContainer">

@@ -11,7 +11,7 @@ const DataContext = createContext({});
 
 export const api = {
   loadData: async () => {
-    const json = await fetch("/events.json");
+    const json = await fetch("https://antunesd.github.io/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/events.json");
     return json.json();
   },
 };

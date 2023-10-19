@@ -46,6 +46,12 @@ yarn test
 - Débugger un site web en utilisant les Chrome DevTools pour identifier et résoudre les problèmes.
 - Rédiger un cahier de recette qui spécifie les scénarios de test pour s'assurer du bon fonctionnement du site.
 
+## Déploiement
+
+Le projet 724Events est actuellement déployé sur GitHub Pages. Vous pouvez accéder à la version en ligne en suivant ce lien : 
+
+https://antunesd.github.io/724Events---Debuggez-le-site-d-une-agence-d-evenementiel
+
 ## Auteur
 
 Ce projet est réalisé par Antunes David dans le cadre de la formation OpenClassrooms.

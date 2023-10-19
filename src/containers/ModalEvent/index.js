@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 
+// Url pour git page
+import URL from "../../URL";
+
 import "./style.scss";
 
 const ModalEvent = ({ event }) => (
@@ -7,7 +10,7 @@ const ModalEvent = ({ event }) => (
       <div className="ModalEvent__imageContainer">
         <img
           data-testid="card-image-testid"
-          src={event.cover}
+          src={`${URL}${event.cover}`}
           alt={event.title}
         />
       </div>

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useData } from "../../contexts/DataContext";
 import { getMonth } from "../../helpers/Date";
 
+// Url pour git page
+import URL from "../../URL";
+
 import "./style.scss";
 
 const Slider = () => {
@@ -44,7 +47,7 @@ const Slider = () => {
               index === idx ? "display" : "hide"
             }`}
           >
-            <img src={event.cover} alt="forum" />
+            <img src={`${URL}${event.cover}`} alt="forum" />
             <div className="SlideCard__descriptionContainer">
               <div className="SlideCard__description">
                 <h3>{event.title}</h3>
