@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/css/main.ee2a8b22.css",
-    "main.js": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/js/main.c09c6778.js",
+    "main.js": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/js/main.8f7e2050.js",
     "static/js/787.227b7f2b.chunk.js": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/js/787.227b7f2b.chunk.js",
     "index.html": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/index.html",
     "main.ee2a8b22.css.map": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/css/main.ee2a8b22.css.map",
-    "main.c09c6778.js.map": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/js/main.c09c6778.js.map",
+    "main.8f7e2050.js.map": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/js/main.8f7e2050.js.map",
     "787.227b7f2b.chunk.js.map": "/724Events---Debuggez-le-site-d-une-agence-d-evenementiel/static/js/787.227b7f2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee2a8b22.css",
-    "static/js/main.c09c6778.js"
+    "static/js/main.8f7e2050.js"
   ]
 }
